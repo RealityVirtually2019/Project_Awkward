@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/RoomOffice1.unity
+- path: Assets/Scenes/Room Office.unity
   isLoaded: 1
   isActive: 1

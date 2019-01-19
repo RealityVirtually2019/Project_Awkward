@@ -60,7 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ApproachCamera.cs" />
+    <Compile Include="Assets\AcquaintanceCanvasController.cs" />
+    <Compile Include="Assets\ContinuousGaze.cs" />
+    <Compile Include="Assets\Control_Text.cs" />
+    <Compile Include="Assets\LavelChanger.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />
@@ -340,22 +343,27 @@
     <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceModContext.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
-    <Compile Include="Assets\Scripts\Behaviours.cs" />
+    <Compile Include="Assets\Scripts\ApproachCamera.cs" />
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\DragMe.cs" />
     <Compile Include="Assets\Scripts\DragPanel.cs" />
     <Compile Include="Assets\Scripts\DropMe.cs" />
-    <Compile Include="Assets\Scripts\EmissionPulser.cs" />
-    <Compile Include="Assets\Scripts\Gaze.cs" />
-    <Compile Include="Assets\Scripts\LightPulser.cs" />
-    <Compile Include="Assets\Scripts\LuisManager.cs" />
-    <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
+    <Compile Include="Assets\Scripts\FadeScene.cs" />
+    <Compile Include="Assets\Scripts\First Scene\approach_talk.cs" />
+    <Compile Include="Assets\Scripts\First Scene\first_scene_party_noise.cs" />
+    <Compile Include="Assets\Scripts\LuisScene\Behaviours.cs" />
+    <Compile Include="Assets\Scripts\LuisScene\EmissionPulser.cs" />
+    <Compile Include="Assets\Scripts\LuisScene\Gaze.cs" />
+    <Compile Include="Assets\Scripts\LuisScene\LightPulser.cs" />
+    <Compile Include="Assets\Scripts\LuisScene\LuisManager.cs" />
+    <Compile Include="Assets\Scripts\LuisScene\MicrophoneManager.cs" />
     <Compile Include="Assets\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\ResizePanel.cs" />
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Scripts\SphereController.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
-    <Compile Include="Assets\SphereController.cs" />
+    <Compile Include="Assets\StartGazeFriend.cs" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarMaterialStateShader.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -402,14 +410,17 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\CrosshairZCheat.shader" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>D:/Awkward/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Awkward/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/Awkward/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Awkward/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Awkward/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -609,14 +620,11 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.20f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/Nam's PC/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/Nam's PC/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/Nam's PC/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/Nam's PC/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/Users/Nam's PC/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.20f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
