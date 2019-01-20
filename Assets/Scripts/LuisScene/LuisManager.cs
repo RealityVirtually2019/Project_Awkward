@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class LuisManager : MonoBehaviour {
     [Serializable] //this class represents the LUIS response
@@ -93,19 +94,52 @@ public class LuisManager : MonoBehaviour {
             entityDic.Add(ed.type, ed.entity);
         }
 
-        // Depending on the topmost recognised intent, read the entities name
-        switch (aQuery.topScoringIntent.intent)
-        {
-            case "SayHello":
-                string stageOne = null;
+        
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0: //hello
+                string hello = null;
                 foreach (var pair in entityDic)
                 {
                     if (pair.Key == "hello")
                     {
-                        stageOne = pair.Value;
+                        hello = pair.Value;
                     }
                 }
-                Behaviours.instance.SayHello(stageOne);
+                LavelChanger.instance.Success(hello);
+                break;
+            case 1: //t-shirt
+                string tshirt = null;
+                string compl = null;
+                foreach (var pair in entityDic)
+                {
+                    if (pair.Key == "T-shirt")
+                    {
+                        tshirt = pair.Value;
+                    }
+                    if (pair.Key == "compliments")
+                    {
+                        compl = pair.Value;
+                    }
+                }
+                LavelChanger.instance.Success( tshirt + compl );
+                break;
+            case 2: //introFriend
+                //Debug.Log("INTROFRIEND SCENE");
+                string intro = null;
+                string friend = null;
+                foreach (var pair in entityDic)
+                {
+                    if (pair.Key == "intro")
+                    {
+                        intro = pair.Value;
+                    }
+                    if (pair.Key == "friend")
+                    {
+                        friend = pair.Value;
+                    }
+                }
+                //Behaviours.instance.Success(intro + friend);
+                LavelChanger.instance.Success(intro + friend);
                 break;
         }
     }

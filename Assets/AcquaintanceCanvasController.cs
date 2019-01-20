@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AcquaintanceCanvasController : MonoBehaviour {
     CanvasGroup canvasGroup;
-    public float speed;
+    public float speed = 0.3f;
     private bool shown = false;
 
 	// Use this for initialization
@@ -26,6 +26,8 @@ public class AcquaintanceCanvasController : MonoBehaviour {
             shown = true;
             Show();
         }
+        //start dictation
+        MicrophoneManager.instance.StartCapturingAudio();
     }
 
     void Show ()

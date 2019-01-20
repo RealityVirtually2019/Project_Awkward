@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class MicrophoneManager : MonoBehaviour {
 
     public static MicrophoneManager instance; //help to access instance of this object
-    private DictationRecognizer dictationRecognizer;  //Component converting speech to text
-    public TextMesh dictationText; //a UI object used to debug dictation result
+    private DictationRecognizer dictationRecognizer;  //Component converting speech to text //***was private
+    //public TextMesh dictationText; //a UI object used to debug dictation result
     //public Text dictationText;
 
     private void Awake()
@@ -67,7 +67,7 @@ public class MicrophoneManager : MonoBehaviour {
         StopCapturingAudio();
         StartCoroutine(LuisManager.instance.SubmitRequestToLuis(dictationCaptured, StartCapturingAudio));
         Debug.Log("Dictation: " + dictationCaptured);
-        dictationText.text = dictationCaptured;
+        //dictationText.text = dictationCaptured;
     }
 
     private void DictationRecognizer_DictationError(string error, int hresult)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class approach_talk : MonoBehaviour {
-    public int speed;
+    public int speed = 10;
     public bool play = true;
     public int dis = 30;
 
