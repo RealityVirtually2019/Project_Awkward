@@ -38,6 +38,7 @@ public class intro_approach : MonoBehaviour
 
         // say hello
         anim = GetComponent<Animator>();
+        anim.Play("Wave");
         AudioSource audio = GetComponent<AudioSource>();
         audio.Play();
         Invoke("StartRecord", 2);

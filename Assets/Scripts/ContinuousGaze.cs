@@ -26,11 +26,12 @@ public class ContinuousGaze : MonoBehaviour {
     {
         if (stay && other.tag == "Clue")
         {
-            // Debug.Log(other.name);  
+            Debug.Log(other.name);  
             if (stayCount > 2.0f)
             {
                 // list cases here, based on other.name (MAYBE we don't even need cases here)
                 if (other.name == "Talking friend") {
+                    Debug.Log("Hit friend");
                    // Debug.Log("Incorrectly Reach here?");
                     stayCount = 0.0f;
                     // make the body glow

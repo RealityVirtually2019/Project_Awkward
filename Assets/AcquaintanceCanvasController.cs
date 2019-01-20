@@ -6,6 +6,7 @@ public class AcquaintanceCanvasController : MonoBehaviour {
     CanvasGroup canvasGroup;
     public float speed = 0.3f;
     private bool shown = false;
+    public LavelChanger levelChanger;
 
 	// Use this for initialization
 	void Start () {
@@ -21,17 +22,27 @@ public class AcquaintanceCanvasController : MonoBehaviour {
 
     void ShowWrapper()
     {
+        //MicrophoneManager.instance.StartCapturingAudio();
         if (!shown)
         {
             shown = true;
             Show();
         }
+
+        Invoke("End", 8);
         //start dictation
-        MicrophoneManager.instance.StartCapturingAudio();
+        //MicrophoneManager.instance.StartCapturingAudio();
+    }
+
+    void End()
+    {
+        levelChanger.CompleteRound();
     }
 
     void Show ()
     {
+        Debug.Log("actually showing");
+        Debug.Log(canvasGroup.alpha);
         if (canvasGroup.alpha < 1)
         {
             canvasGroup.alpha += speed;

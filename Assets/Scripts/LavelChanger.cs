@@ -38,22 +38,39 @@ public class LavelChanger : MonoBehaviour {
     }
 
     public void Success(string utterance) {
-        if (startedTracking1)
+        //if (startedTracking1)
         {
             Debug.Log("complete round!!!!");
-            man.LevelDone = true;
-            plane.Talk();
-            man.Wave();
-            sayHi.FadeOutHi();
-            logo.LogoFadeIn();
+                man.LevelDone = true;
+                plane.Talk();
+                man.Wave();
+                sayHi.FadeOutHi();
+                logo.LogoFadeIn();
+            confetti.Play();
+            Invoke("FadeToNextLevel", 5);
+
+            //    man.LevelDone = true;
+            //plane.Talk();
+            //man.Wave();
+            //sayHi.FadeOutHi();
+            //logo.LogoFadeIn();
             //if (PopUpLogo != null)
             //{
             //    PopUpLogo();
             //}
-            confetti.Play();
-            Invoke("FadeToNextLevel", 5);
+
+            //MicrophoneManager.instance.StopCapturingAudio();
+
+
         }
     }
+
+    public void CompleteRound()
+    {
+        confetti.Play();
+        Invoke("FadeToNextLevel", 5);
+    }
+
     public void FadeToNextLevel() {
         FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }

@@ -10,6 +10,8 @@ public class BeHappy : MonoBehaviour {
 	void Start () {
         audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+
+        anim.Play("Looking Down");
     }
 	
 	// Update is called once per frame
